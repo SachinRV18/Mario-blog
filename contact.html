@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/Mario/CSS/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <section id="latest-news">
+      <h2>Please fill the form to connect..</h2>
+
+      <div class="contact">
+        <div class="news-item text-box">
+          <form id="contactForm" action="#" method="POST">
+            <label for="name">Your Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Your name"
+            />
+
+            <label for="email">Your Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Your email"
+            />
+
+            <label for="subject">Subject:</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              placeholder="Subject"
+            />
+
+            <label for="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              placeholder="Your message"
+            ></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+
+          <a href="index.html" class="download-link">Back to Homepage</a>
+        </div>
+      </div>
+    </section>
+    <script src="/Mario/js/script.js"></script>
+  </body>
+</html>
