@@ -7,10 +7,10 @@ function confirmLeaveSite() {
   }
 }
 
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    alert("Message sent successfully!");
+// document
+//   .getElementById("contactForm")
+//   .addEventListener("submit", function (event) {
+//     alert("Message sent successfully!");
 
-    window.location.href = "index.html";
-  });
+//     // window.location.href = "index.html";
+//   });
