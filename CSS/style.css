@@ -532,6 +532,7 @@ form button {
   color: white;
   padding: 10px;
   border: none;
+  margin-top: 15px;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
@@ -603,4 +604,34 @@ form button:hover {
   .back-home-image-news img {
     display: none;
   }
+}
+
+/* Invalid input fields */
+
+/* Feedback messages */
+div.feedback {
+  display: none; /* Initially hidden */
+  color: red;
+  font-size: 12px;
+  margin-top: 0px; /* Adjust this value to move the message higher */
+  margin-bottom: -8px; /* Add space below the error message */
+  font-weight: bold;
+}
+
+/* Show feedback message when input is invalid */
+input.invalid ~ div.feedback,
+textarea.invalid ~ div.feedback {
+  display: block; /* Show feedback when input has the invalid class */
+}
+
+/* Move the label below slightly */
+label {
+  display: block;
+  margin-top: 15px; /* Adjust this to move the label a little lower */
+}
+
+/* Optional: Style for the submit button to give feedback when the form is invalid */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }

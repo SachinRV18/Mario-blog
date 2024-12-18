@@ -7,10 +7,18 @@ function confirmLeaveSite() {
   }
 }
 
-// document
-//   .getElementById("contactForm")
-//   .addEventListener("submit", function (event) {
-//     alert("Message sent successfully!");
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    alert("Message sent successfully!");
+  });
 
-//     // window.location.href = "index.html";
-//   });
+// Event listener for form submission
+document.forms.form01.addEventListener(
+  "invalid",
+  function (e) {
+    e.preventDefault();
+    e.target.classList.add("invalid");
+  },
+  true
+);
