@@ -15,15 +15,17 @@
 
       <div class="contact">
         <div class="news-item text-box">
-          <form id="contactForm" action="index.html">
+          <form id="contactForm" name="form01" action="index.html">
             <label for="name">Your Name:</label>
             <input
               type="text"
               id="name"
               name="name"
               required
+              autocomplete="off"
               placeholder="Your name"
             />
+            <div class="feedback">This needs to be your name</div>
 
             <label for="email">Your Email:</label>
             <input
@@ -31,8 +33,10 @@
               id="email"
               name="email"
               required
+              autocomplete="off"
               placeholder="Your email"
             />
+            <div class="feedback">Please enter a valid email</div>
 
             <label for="subject">Subject:</label>
             <input
@@ -40,8 +44,10 @@
               id="subject"
               name="subject"
               required
+              autocomplete="off"
               placeholder="Subject"
             />
+            <div class="feedback">Please enter a subject</div>
 
             <label for="message">Message:</label>
             <textarea
@@ -49,8 +55,10 @@
               name="message"
               rows="4"
               required
+              autocomplete="off"
               placeholder="Your message"
             ></textarea>
+            <div class="feedback">Please enter a message</div>
 
             <button type="submit">Send Message</button>
           </form>
