@@ -10,6 +10,10 @@ a {
   font-family: arial;
 }
 
+.required {
+  background-color: red;
+}
+
 header {
   background-color: #f63232;
   padding: 21px;
@@ -128,7 +132,7 @@ section.join h2 {
   font-size: 36px;
 }
 form input {
-  margin: 20px 0;
+  margin: 5px 0;
   padding: 10px 20px;
   font-size: 24px;
   border-radius: 28px;
@@ -152,15 +156,10 @@ nav li a:hover {
 }
 
 form input:focus {
-  border: 4px dashed #4b4b4b;
   outline: none;
 }
 
 /* form selection */
-
-form input:valid {
-  border: 4px solid #71d300;
-}
 
 nav ul li:first-child {
   border: 3px solid #f0f8ff;
@@ -331,7 +330,6 @@ section.join p::selection {
 
 .text-box .download-link:hover {
   color: #d02a2a;
-  border: 4px dashed #d02a2a;
 }
 
 .text-box .read-more:hover {
@@ -517,7 +515,7 @@ form input,
 form textarea {
   padding: 10px;
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 100%;
@@ -575,5 +573,34 @@ form button:hover {
   form button {
     padding: 12px;
     font-size: 18px;
+  }
+}
+
+/* Style for the back-home-image-news */
+
+.back-home-image-news a {
+  position: relative;
+  top: -68px;
+  left: 575px;
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+
+.back-home-image-news img {
+  position: relative;
+  top: -68px;
+  left: 575px;
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+
+.back-home-image img:hover {
+  opacity: 0.8;
+}
+@media screen and (max-width: 669px) {
+  .back-home-image-news img {
+    display: none;
   }
 }
