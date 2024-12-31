@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <title>Marioclub</title>
   </head>
   <body>
@@ -23,7 +28,7 @@
     <nav class="main-nav">
       <ul>
         <li id="home"><a href="#" class="join">Home</a></li>
-        <li><a href="/news.html">Latest news</a></li>
+        <li><a href="/explore.html">Explore</a></li>
         <li><a href="/history.html">Mario History</a></li>
         <li><a href="/contact.html">Contact</a></li>
       </ul>
@@ -31,10 +36,12 @@
 
     <main>
       <article>
-        <h2>It's a me, Mario</h2>
+        <h2 id="mario-heading">It's a me, Mario</h2>
         <p id="heading">
-          If you’re a Mario fan — or even if you’ve just found out about him today — you’ve come to the right place! 
-          Learn everything there is to know about that multitalented, mustached marvel, and check out the latest news, videos, and more.
+          If you’re a Mario fan — or even if you’ve just found out about him
+          today — you’ve come to the right place! Learn everything there is to
+          know about that multitalented, mustached marvel, and check out the
+          latest news, videos, and more.
         </p>
       </article>
 
@@ -42,19 +49,38 @@
         <li><img src="img/thumb-1.png" alt="mario thumb - 1" /></li>
         <li><img src="img/thumb-2.png" alt="mario thumb - 2" /></li>
       </ul>
+      <div class="news-item text-box">
+        <h2 id="news">Latest News</h2>
+        <h3>New Mario Game Announced!</h3>
+
+        <p class="news-summary">
+          The newest Mario game, Super Mario Run, has been officially announced!
+          Explore new worlds and encounter familiar characters with exciting new
+          gameplay features.
+          <a
+            href="https://play.google.com/store/apps/details?id=com.nintendo.zara&hl=en"
+            class="download-link"
+            ,
+            target="_blank"
+            onclick="return confirmLeaveSite()"
+          >
+            <i class="fa-solid fa-download"></i>
+          </a>
+        </p>
+      </div>
     </main>
 
     <section class="join">
       <h2>Be Part of the Ultimate Mario Community!</h2>
       <p>
-        From secret tips to fan art and game theories, the Mario Club is where fans come together. Join today and start your adventure!"
+        From secret tips to fan art and game theories, the Mario Club is where
+        fans come together. Join today and start your adventure!"
       </p>
     </section>
 
     <footer>
       <p class="copyright">All rights reserved © 2024.</p>
     </footer>
+    <script src="/js/script.js"></script>
   </body>
-</html>
-</head>
 </html>
