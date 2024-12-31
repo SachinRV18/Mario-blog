@@ -19,13 +19,16 @@ body {
 }
 
 .image-item {
+  object-fit: cover;
+  width: 100%;
   position: relative;
+  height: 100%;
 }
 
 .image-grid img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 8px; /* Optional: adds rounded corners */
   transition: transform 0.3s ease;
 }
 
@@ -52,6 +55,29 @@ body {
 }
 
 .image-item:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-amazon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+  font-size: 1.5em;
+  font-weight: bold;
+  object-fit: fill;
+}
+
+.image-item:hover .image-amazon-overlay {
   opacity: 1;
 }
 
