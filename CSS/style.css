@@ -92,7 +92,7 @@ nav li a.join {
 main {
   max-width: 100%;
   width: 1200px;
-  margin: 80px auto;
+  margin: 0 auto;
   padding: 0 40px;
   box-sizing: border-box;
 }
@@ -155,7 +155,8 @@ nav li a:hover {
   top: -4px;
 }
 
-form input:focus {
+textarea:focus,
+input:focus {
   outline: none;
 }
 
@@ -304,32 +305,28 @@ section.join p::selection {
 
 .text-box h3 {
   font-size: 1.8em;
-  color: #e63946; /* Mario's red color */
+  color: #4b4b4b; /* Mario's red color */
   margin-bottom: 10px;
 }
 
 .text-box .news-summary {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #333;
   margin-top: 10px;
 }
 
-.text-box .download-link {
-  border: 4px solid #e63946;
-  padding: 10px 90px;
-  border-radius: 36px;
-  color: #e63946;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 10px;
-  display: block;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
+.download-link i {
+  font-size: 22px;
+  color: #4b4b4b;
+  cursor: pointer;
 }
 
-.text-box .download-link:hover {
-  color: #d02a2a;
+#news {
+  color: #e63946;
+}
+
+.download-link i:hover {
+  color: #1b1a1a;
 }
 
 .text-box .read-more:hover {
@@ -520,10 +517,8 @@ form textarea {
   border-radius: 4px;
   width: 100%;
   box-sizing: border-box;
-}
-
-form textarea {
   resize: vertical;
+  font-family: arial;
 }
 
 /* Button Styling */
@@ -618,8 +613,13 @@ div.feedback {
 input.invalid ~ div.feedback,
 textarea.invalid ~ div.feedback {
   display: block;
+  font-family: Arial, Helvetica, sans-serif;
 }
 label {
   display: block;
   margin-top: 15px;
+}
+
+#mario-heading {
+  margin-top: 10px;
 }
