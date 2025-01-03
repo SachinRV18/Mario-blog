@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Practice</title>
+    <link rel="stylesheet" href="/CSS/js-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>JavaScript Practice</h1>
+      <span id="close-btn">&#10005;</span>
+      <!-- Product Info -->
+      <section id="product">
+        <h2>Product Information</h2>
+        <p id="product-title"></p>
+        <p id="product-ratings"></p>
+        <p id="product-price"></p>
+        <p id="product-discount"></p>
+      </section>
+
+      <!-- Profile Info -->
+      <section id="profile">
+        <h2>User Profile</h2>
+        <p id="profile-username"></p>
+        <p id="profile-followers"></p>
+        <p id="profile-following"></p>
+      </section>
+
+      <!-- Pre-Increment & Post-Increment -->
+      <section id="preIncrementCheck">
+        <h2>Pre Increment Check</h2>
+        <input
+          type="number"
+          id="preNumberInputIncrement"
+          placeholder="Enter number"
+        />
+        <button onclick="checkPreIncrement()">Pre-Increment Check</button>
+        <p id="preIncrementResult"></p>
+      </section>
+
+      <section id="postIncrementCheck">
+        <h2>Post Increment Check</h2>
+        <input
+          type="number"
+          id="postNumberInputIncrement"
+          placeholder="Enter number"
+        />
+        <button onclick="checkPostIncrement()">Post-Increment Check</button>
+        <p id="postIncrementResult"></p>
+      </section>
+
+      <!-- Pre-Decrement & Post-Decrement -->
+      <section id="preDecrementCheck">
+        <h2>Pre Decrement Check</h2>
+        <input
+          type="number"
+          id="preNumberInputDecrement"
+          placeholder="Enter number"
+        />
+        <button onclick="checkPreDecrement()">Pre-Decrement Check</button>
+        <p id="preDecrementResult"></p>
+      </section>
+
+      <section id="postDecrementCheck">
+        <h2>Post Decrement Check</h2>
+        <input
+          type="number"
+          id="postNumberInputDecrement"
+          placeholder="Enter number"
+        />
+        <button onclick="checkPostDecrement()">Post-Decrement Check</button>
+        <p id="postDecrementResult"></p>
+      </section>
+
+      <!-- Multiple of 5 Check -->
+      <section id="multipleCheck">
+        <h2>Multiple of 5 Check</h2>
+        <input type="number" id="numberInput" placeholder="Enter number" />
+        <button onclick="checkMultiple()">Check</button>
+        <p id="multipleResult"></p>
+      </section>
+
+      <!-- Marks Grade -->
+      <section id="marksGrade">
+        <h2>Grade Calculation</h2>
+        <input type="number" id="marksInput" placeholder="Enter marks" />
+        <button onclick="calculateGrade()">Get Grade</button>
+        <p id="gradeResult"></p>
+      </section>
+
+      <!-- Number Guess Game -->
+      <section id="guessGame">
+        <h2>Guess the Number Game</h2>
+        <input type="number" id="guessInput" placeholder="Enter your guess" />
+        <button onclick="guessNumber()">Guess</button>
+        <p id="gameResult"></p>
+      </section>
+
+      <!-- String Manipulation -->
+      <section id="stringManipulation">
+        <h2>String Manipulation</h2>
+        <input type="text" id="stringInput" placeholder="Enter text" />
+        <button onclick="manipulateString()">Manipulate String</button>
+        <p id="stringResult"></p>
+      </section>
+
+      <!-- Array Operations -->
+      <section id="arrayInput">
+        <h2>Enter Marks (5 Marks)</h2>
+        <label for="mark1">Mark 1:</label>
+        <input type="text" id="mark1" placeholder="Enter mark 1" />
+        <br />
+        <label for="mark2">Mark 2:</label>
+        <input type="text" id="mark2" placeholder="Enter mark 2" />
+        <br />
+        <label for="mark3">Mark 3:</label>
+        <input type="text" id="mark3" placeholder="Enter mark 3" />
+        <br />
+        <label for="mark4">Mark 4:</label>
+        <input type="text" id="mark4" placeholder="Enter mark 4" />
+        <br />
+        <label for="mark5">Mark 5:</label>
+        <input type="text" id="mark5" placeholder="Enter mark 5" />
+        <br />
+        <button onclick="calculateArraySum()">Calculate Sum & Average</button>
+        <p id="arrayResult"></p>
+      </section>
+
+      <!-- Array Methods -->
+      <section id="arrayOperations">
+        <h2>Array Methods Demo</h2>
+        <button onclick="arrayMethods()">Show Array Methods</button>
+        <div id="arrayOpResult"></div>
+      </section>
+
+      <!-- Regular and Arrow Functions -->
+      <section id="functionExample">
+        <h2>Regular Function vs Arrow Function</h2>
+
+        <button onclick="showRegularFunction()">Regular Function</button>
+        <button onclick="showArrowFunction()">Arrow Function</button>
+
+        <p id="functionResult"></p>
+        <h3>Regular Function Code:</h3>
+        <pre>
+          function showRegularFunction() {
+            document.getElementById("functionResult").innerText =
+              "This message was generated using a regular function.";
+          }
+        </pre>
+
+        <!-- Display JavaScript code for Arrow Function -->
+        <h3>Arrow Function Code:</h3>
+        <pre>
+          const showArrowFunction = () => {
+            document.getElementById("functionResult").innerText =
+              "This message was generated using an arrow function.";
+          }
+        </pre>
+      </section>
+
+      <!-- Callback Function  -->
+      <h2>Callback Function Example</h2>
+      <button onclick="startProcess()">Click Me to Start Process</button>
+      <p id="result"></p>
+
+      <!-- DOM Manipulation  -->
+      <h2>DOM Manipulation Example</h2>
+
+      <h2 id="heading" class="heading">Original Heading</h2>
+      <p class="para">This is a paragraph element.</p>
+      <p class="para">This is another paragraph.</p>
+
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+
+      <button onclick="updateDOM()">Click to Update DOM</button>
+
+      <div id="content">
+        <!-- dynamic content ... -->
+      </div>
+
+      <h2>JavaScript DOM Manipulation and Event Handling</h2>
+
+      <div>
+        <h2>Inline Event Handling</h2>
+        <button onclick="console.log('Hello Sachin'); alert('Hello')">
+          Click me!
+        </button>
+        <button
+          ondblclick="console.log('Hello, you clicked twice!'); alert('Hello')"
+        >
+          Click me twice!
+        </button>
+
+        <hr />
+        <div onmouseover="console.log('MouseOver done!')">
+          <span
+            style="
+              background-color: rgba(28, 156, 50, 0.582);
+              margin: 10px;
+              padding: 8px;
+            "
+          >
+            Hover over this div</span
+          >
+          <hr />
+        </div>
+      </div>
+
+      <div>
+        <h2>Event Handling using External JS</h2>
+        <button id="button1" class="btn">Click Me!</button>
+      </div>
+
+      <div>
+        <h2>Toggle Between Light/Dark Mode</h2>
+        <button id="btn" class="btn">Change Mode</button>
+      </div>
+
+      <div>
+        <h2>Classes and Objects Example</h2>
+        <button id="createStudent" class="btn">
+          Click here to get the student mark !
+        </button>
+        <div id="studentOutput" class="output"></div>
+      </div>
+
+      <div>
+        <h2>Error Handling Example</h2>
+        <button id="errorExample" class="btn">Run Error Example</button>
+        <div id="errorOutput" class="output"></div>
+      </div>
+
+      <h2>Sync and Async Programming Example</h2>
+
+      <!-- Sync Programming Example -->
+      <div>
+        <h2>Sync Programming</h2>
+        <button id="syncExample" class="btn">Run Sync Example</button>
+        <div id="syncOutput" class="output"></div>
+      </div>
+
+      <!-- Async Programming Example -->
+      <div>
+        <h2>Async Programming</h2>
+        <button id="asyncExample" class="btn">Run Async Example</button>
+        <div id="asyncOutput" class="output"></div>
+      </div>
+
+      <!-- Callback Hell Example -->
+      <div>
+        <h2>Callback Hell Example</h2>
+        <button id="callbackHell" class="btn">Run Callback Hell</button>
+        <div id="callbackHellOutput" class="output"></div>
+      </div>
+
+      <!-- Promise Example -->
+      <div>
+        <h2>Promise Chaining Example</h2>
+        <button id="promiseChaining" class="btn">Run Promise Chaining</button>
+        <div id="promiseChainingOutput" class="output"></div>
+      </div>
+
+      <!-- Async/Await Example -->
+      <div>
+        <h2>Async/Await Example</h2>
+        <button id="asyncAwait" class="btn">Run Async/Await Example</button>
+        <div id="asyncAwaitOutput" class="output"></div>
+      </div>
+
+      <!-- API Call Example -->
+      <div>
+        <h2>API Call Example</h2>
+        <button id="apiButton" class="apiButton">Get Cat Fact</button>
+        <div id="facts" class="output"></div>
+      </div>
+    </div>
+
+    <script src="/JS/javaScript-main.js"></script>
+  </body>
+</html>
