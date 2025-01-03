@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML and CSS</title>
+    <link rel="stylesheet" href="/CSS/html-css-style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to HTML and CSS Fundamentals</h1>
+      <span id="close-btn">&#10005;</span>
+      <nav>
+        <ul>
+          <li>
+            <a href="#" target="_blank"><u>Home</u></a>
+          </li>
+          <li><a href="/explore.html" target="_blank">Explore</a></li>
+          <li><a href="/history.html" target="_blank">History</a></li>
+          <li><a href="/contact.html" target="_blank">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Banner Section -->
+      <section class="banner">
+        <div class="welcome">
+          <h2>Learn HTML & CSS with Us</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi
+            consequuntur neque impedit fugiat? Excepturi, sed nihil culpa
+            asperiores quasi, voluptatum dicta ut nisi maxime ratione
+            consequatur tenetur delectus aliquam error!
+          </p>
+        </div>
+        <img
+          width="100%"
+          ,
+          height="100%"
+          src="/img/banner.png"
+          alt="Banner Image"
+        />
+      </section>
+
+      <!-- Introduction Section -->
+      <section class="intro">
+        <h2>Introduction to Web Development</h2>
+        <p>
+          This website is designed to teach you the fundamentals of HTML and
+          CSS. You will learn about structure, layout, styling, and
+          responsiveness.
+        </p>
+        <p>
+          Understanding how HTML structures content and CSS styles it is key to
+          building functional and visually appealing websites.
+        </p>
+      </section>
+
+      <!-- HTML Basics Section -->
+      <section class="content">
+        <h2>HTML Basics</h2>
+        <p>This section will teach you how to structure an HTML document.</p>
+
+        <h3>What You Will Learn:</h3>
+        <ul>
+          <li>Headings</li>
+          <pre>
+            <h1>This is Heading 1</h1>
+            <h2>This is Heading 2</h2>
+            <h3>This is Heading 3</h3>
+            <h4>This is Heading 4</h4>
+            <h5>This is Heading 5</h5>
+            <h6>This is Heading 6</h6>
+          </pre>
+          <li>Paragraphs</li>
+          <p>
+            A narrative paragraph tells a <strong>story</strong>, either real or
+            fictional, <em>by introducing a topic, </em> giving more details,
+            and then ending with a reflection or transition to another
+            paragraph.
+          </p>
+          <li>Lists</li>
+          <h4>Ordered List</h4>
+          <ol>
+            <li>List 1</li>
+            <li>List 2</li>
+            <li>List 3</li>
+          </ol>
+
+          <h4>un-ordered List</h4>
+          <ul>
+            <li>List 1</li>
+            <li>List 2</li>
+            <li>List 3</li>
+          </ul>
+
+          <h4>Div tag used below for Ordered List</h4>
+          <div>
+            <ol>
+              <li>List 1</li>
+              <li>List 2</li>
+              <li>List 3</li>
+            </ol>
+          </div>
+
+          <h4>Div tag used below for un-ordered List</h4>
+          <div>
+            <ul>
+              <li>List 1</li>
+              <li>List 2</li>
+              <li>List 3</li>
+            </ul>
+          </div>
+
+          <h4>span tag used below</h4>
+          <p>
+            Hello, My name is <span style="color: tomato">Sachin</span> Nice to
+            meet you all :)
+          </p>
+          <li>Links</li>
+          <h4>anchor tag</h4>
+          <a href="/img/bird-thumbnail.jpg" ,="" target="_blank"
+            >This contains a Bird image.</a
+          >
+          <li>Images</li>
+          <img
+            src="/img/bird-thumbnail.jpg"
+            alt="bird image"
+            ,=""
+            height="100px"
+            width="100px"
+          />
+          <h4>Blockquote tag</h4>
+          <p>Here is a famous quote:</p>
+
+          <blockquote cite="https://en.wikipedia.org/wiki/Albert_Einstein">
+            "Life is like riding a bicycle. To keep your balance, you must keep
+            moving."
+          </blockquote>
+
+          <p>- Albert Einstein</p>
+        </ul>
+      </section>
+
+      <!-- Image Gallery Section -->
+      <section class="gallery">
+        <h2>Image Gallery</h2>
+        <p>Here are some sample images related to web development:</p>
+        <ul>
+          <li>
+            <img src="/img/rock-paper.jpeg" alt="Image 1" />
+            <p>Image 1: HTML Basics</p>
+          </li>
+          <li>
+            <img src="/img/html-css.jpeg" alt="Image 2" />
+            <p>Image 2: CSS Styling</p>
+          </li>
+          <li>
+            <img src="/img/javascript.jpeg" alt="Image 3" />
+            <p>Image 3: Responsive Design</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Links Section -->
+      <section class="links">
+        <h2>Useful Links</h2>
+        <p>Here are some resources to help you further your learning:</p>
+        <ul>
+          <li>
+            <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+              target="_blank"
+              >MDN Web Docs - HTML</a
+            >
+          </li>
+          <li>
+            <a href="https://www.freecodecamp.org/" target="_blank"
+              >FreeCodeCamp</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="form-section">
+        <h2>Contact Us</h2>
+        <form>
+          <label for="name">Your Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Enter your name"
+          />
+
+          <label for="email">Your Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter your email"
+          />
+
+          <label for="message">Your Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your message"
+          ></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+    <!-- Footer Section -->
+    <footer>
+      <p>&#xA9; 2025 all rights reserved</p>
+    </footer>
+
+    <script>
+      // Function to redirect to the homepage
+      function goHome() {
+        window.location.href = "/index.html";
+      }
+
+      // event listener to the close button with ID
+      document.getElementById("close-btn").addEventListener("click", goHome);
+    </script>
+  </body>
+</html>

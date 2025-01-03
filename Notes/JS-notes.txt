@@ -1,0 +1,478 @@
+ <!-- - Part : 1 -->
+alert("Hello") # added a alert msg
+<script src="index.js"></script> # to link an external java script file
+we can also run the code from the browser console :
+right click on browser >> select inspect >> then console >> "act like a text editor"
+we can comment the code using two slashes (//) in JS.
+console.log("data") : whatever the data we enter inside the console.log it will displayed in the console of the browser.
+
+ <!-- - Part : 2 -->
+ variables : we can declare a variable using (var, let and const)
+ var keyword is depricated in ES6, so in modern JS we are not using anymore.
+ ES6 : means ECMAScript 6 or ES2015
+ JS always follow top down approch
+ var greeting;  // conditionally rendering some data
+ <!-- Rules and Convention of Variables -->
+1. Variables is starts with letters or _  or $.
+camelcase : example - firstName
+Pascalcase : example - FirstName
+var and let are same.
+If we use const we cannot reassign its values, it will throw an error.
+Note: we cannot change the value of the constant variable, but we can change the "value of the object" of constant variable
+
+ <!-- - Part : 3 -->
+ Datatypes in JS
+ 
+ 1. Primitive Datatypes
+ stored directly in the location the variable access
+ stored in stack
+ string, number, boolean, null, undefined, symbol
+
+ 2. Reference Datatypes 
+ accessed by reference (key)
+ stored in heap, and points to location in memory
+ arrays, object Literals, Functions
+
+ "typeof" function used in JS to know the data type of the variable
+
+  <!-- - Part : 4 -->
+  <!-- Type convention -->
+conversion of one data type into another
+console.log(val.length) : it will work only for strings it will print total number of characters in the string.
+It is a property of a string
+
+
+we can convert also using toString() method
+val.toFixed(2) the toFixed used to define how many decimals we want example 2.00
+
+parseInt() this method used to convert into number from any data type
+
+type cohesion : if frst letter is string means it will convert next one also an string and concatinate its value
+
+  <!-- - Part : 5 -->
+string and string methods
+concatination, Append, escaping, Length, concat, toChange case, indexing, indexOf(), charAt(), substring(), slice, split(), replace(), includes(), 
+
+  <!-- - Part : 6 -->
+
+val = Math.PI;
+val = Math.round(3.2)
+val = Math.ceil(3.1)  //above value
+val = Math.floor(3.1)  //lower/previous value
+val = Math.sqrt(4)
+val = Math.abs(-5)   // Absolute value.
+val = Math.pow(5, 2)   // power value.
+val = Math.min(2,3,5,67,887)  // Minimum
+val = Math.max(2,3,5,67,887)  // Maximum
+val = Math.random()  // Print the value within 0 to 1
+val = Math.random() * 20 // Print the value within 0 to 20
+val = Math.random() * 20 + 1// Print the value within 1 to 20
+val = Math.floor(Math.random() * 20 + 1)// Print the value within 1 to 20 (only whole number. Not Decimal values)
+
+  <!-- - Part : 7 -->
+
+  // Arrays.
+
+  // // arrays and methods
+
+// const number = [1,2,3,45,6,7,8,9,32];
+// const number2 = new Array(1,2,3,45,6,7,8,9,32);  // another way of creating an array
+// const fruits = new Array("apple", "bananana", "orange");  // astoring strings in array
+// // const mixed = new Array("apple", "bananana", " orange", 1, 2,3,4,5, true, undefined, null);  // storing multiple types of data's in array
+// // // console.log(number2)
+// // // console.log(fruits)
+// // // console.log(mixed)
+
+// let val;
+// // val = number.length; // array length
+
+// // val = Array.isArray(number); // to check its an array or not
+
+// // val = number[3] // to get a single value using indexing
+
+// // // insert or replace
+// // number[1] = 100;
+
+// // // find the index value
+// // val = number.indexOf(45);
+
+// // //Mutating the array
+// // //add a number to the end of an array
+// // number.push(2590);
+
+// // // add to the front
+// // number.unshift(120);
+
+// // //remove the last number from the array.
+// // number.pop(2590);
+
+// // // remove the frst number from the array.
+// // number.shift(120)
+
+// // console.log(number);
+
+// // //splicing
+// // number.splice(1,1)  // remove an element from pointing the index
+// // console.log(number);
+
+// // reverse the number
+// // number.reverse();
+
+// // concat the numbers
+// // val = number.concat(number2);
+
+// // sort the array
+// // val = fruits.sort();
+
+// // // sort the numbers
+// // val = number.sort()  // it will sort based on the first digit.
+
+// // // sort ascending order
+// // val = number.sort(function(x, y) {
+// //     return x-y;
+// // });
+
+// // sort decending order
+// val = number.sort(function(x, y) {
+//     return y - x;
+// });
+
+// console.log(val)
+
+ <!-- - Part : 8 -->
+
+ Template Literals : without using a double quotes (" ") we can use the (` `) backtick to rendering a page in JS is called as template literals.
+
+ // Object literals
+
+we have to take the property of the object means we use the "This" keyword.
+
+ <!-- - Part : 9 -->
+ // conditional and comparisions
+ syntax
+if (something){
+    do something;
+}else{
+    do something else
+}
+
+note : if we use === it checks the value and also the type of a variable
+
+loops in JS
+for loops
+for of loop
+while loop
+do while loop
+for in loop.
+
+ <!-- - Part : 10 -->
+
+ Control Flow Statements
+ if/else: Used to execute code based on a condition.
+    let age = 18;
+    if (age >= 18) {
+        console.log("Adult");
+    } else {
+        console.log("Minor");
+    }
+
+    let time = 20;
+    if (time < 12) {
+        console.log("Good Morning");
+    } else if (time < 18) {
+        console.log("Good Afternoon");
+    } else {
+        console.log("Good Evening");
+    }
+
+switch: Evaluates an expression and executes code based on matching case.
+
+  let fruit = "apple";
+  switch (fruit) {
+      case "apple":
+          console.log("This is an apple.");
+          break;
+      case "banana":
+          console.log("This is a banana.");
+          break;
+      default:
+          console.log("Unknown fruit.");
+  }
+
+  let day = 2;
+  switch (day) {
+      case 1:
+          console.log("Monday");
+          break;
+      case 2:
+          console.log("Tuesday");
+          break;
+      default:
+          console.log("Weekend");
+  }
+
+while: Loops through code as long as the condition is true.
+
+  let i = 0;
+  while (i < 5) {
+      console.log(i);
+      i++;
+  }
+
+  let count = 3;
+  while (count > 0) {
+      console.log("Countdown:", count);
+      count--;
+  }
+
+do...while: Executes the code block at least once before checking the condition.
+
+    let x = 0;
+    do {
+        console.log(x);
+        x++;
+    } while (x < 3);
+
+    let n = 5;
+    do {
+        console.log("Number:", n);
+        n--;
+    } while (n > 0);
+
+Logical Operators
+
+Logical OR (||): Returns true if at least one condition is true.
+
+let a = 5, b = 10;
+if (a > 0 || b < 5) {
+    console.log("At least one condition is true.");
+}
+
+let loggedIn = false, isAdmin = true;
+if (loggedIn || isAdmin) {
+    console.log("Access granted.");
+}
+
+Logical AND (&&): Returns true only if both conditions are true.
+
+let x = 7, y = 12;
+if (x > 5 && y > 10) {
+    console.log("Both conditions are true.");
+}
+
+let isActive = true, hasSubscription = true;
+if (isActive && hasSubscription) {
+    console.log("User has access.");
+}
+
+Logical NOT (!): Reverses the value of a boolean.
+
+let isLoggedIn = false;
+if (!isLoggedIn) {
+    console.log("Please log in.");
+}
+
+let lightOn = true;
+console.log(!lightOn); // false
+
+Loops
+
+for loop: Iterates a block of code a specific number of times.
+
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+const colors = ["red", "green", "blue"];
+for (let i = 0; i < colors.length; i++) {
+    console.log(colors[i]);
+}
+
+forEach: Executes a function for each array element.
+
+let numbers = [1, 2, 3];
+numbers.forEach(num => console.log(num * 2));
+
+let fruits = ["apple", "banana", "mango"];
+fruits.forEach(fruit => console.log(fruit));
+
+Functions
+
+Regular Function: Declared with the function keyword.
+
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+console.log(greet("Alice"));
+
+function add(a, b) {
+    return a + b;
+}
+console.log(add(3, 5));
+
+Arrow Function: A concise syntax using =>.
+
+const multiply = (a, b) => a * b;
+console.log(multiply(4, 5));
+
+const greet = name => `Hi, ${name}!`;
+console.log(greet("Bob"));
+
+Callback Functions
+
+A function passed as an argument to another function.
+
+Example 1:
+  function processUserInput(callback) {
+      const name = "Alice";
+      callback(name);
+  }
+
+  processUserInput(name => console.log(`Hello, ${name}`));
+
+Example 2:
+
+function calculate(a, b, operation) {
+    return operation(a, b);
+}
+
+const sum = calculate(5, 10, (x, y) => x + y);
+console.log(sum); // 15
+
+Hoisting
+
+Hoisting is JavaScript's default behavior of moving declarations to the top.
+
+Variable Hoisting:
+  console.log(a); // undefined
+  var a = 10;
+
+Function Hoisting:
+greet();
+function greet() {
+    console.log("Hello!");
+}
+
+Callback and forEach
+    Callback: A function passed as an argument to another function, which can be executed later.
+    forEach: A method to iterate over array elements, executing a callback function for each element.
+    Ex: const numbers = [1, 2, 3];
+    numbers.forEach(num => console.log(num * 2)); // Callback prints each number doubled
+
+Reference to the UI
+    Using JavaScript, references to UI elements can be obtained using DOM methods like getElementById.
+
+    Example: const button = document.getElementById('submitButton');
+    button.textContent = 'Click Me';
+
+Object and Object Literal Creation
+    Object: A collection of properties (key-value pairs).
+    Object Literal: A shorthand syntax for creating objects using {}.
+    Example: const user = { name: 'Alice', age: 25 };
+    console.log(user.name); // Accessing property
+
+
+ Dot and Square Bracket Notation
+    Dot Notation: Access properties using .propertyName.
+    Square Bracket Notation: Access properties using ['propertyName'].
+
+    Example: 
+    const obj = { key: 'value' };
+    console.log(obj.key); // Dot notation
+    console.log(obj['key']); // Square bracket notation
+
+Method vs Function and this Keyword
+    Function: Independent code block that performs a task.
+    Method: A function attached to an object.
+    this: Refers to the object calling the method.
+
+    Example:
+    const person = {
+    name: 'Bob',
+    greet() {
+        console.log(`Hello, ${this.name}`); // 'this' refers to person
+    }
+    };
+    person.greet(); // Hello, Bob
+
+Shorthand Object Property
+
+    Shorthand is used when the variable name matches the property name.
+
+    Example: const name = 'Charlie';
+    const age = 30;
+    const user = { name, age }; // Shorthand
+    console.log(user); // { name: 'Charlie', age: 30 }
+
+    Math Object and Random Numbers
+    Math Object: Provides mathematical functions and constants.
+    Random Numbers: Generated using Math.random().
+
+    Example: console.log(Math.PI); // 3.141592653589793
+    console.log(Math.random()); // Random number between 0 and 1
+
+ Primitive and Reference Types
+    Primitive Types: Immutable (e.g., string, number, boolean).
+    Reference Types: Mutable, stored as references (e.g., object, array).
+        Difference:
+
+        Primitive values are copied by value, while reference types are copied by reference.
+
+        Example: let a = 5; // Primitive
+        let b = a;
+        b = 10;
+        console.log(a); // 5
+
+        const arr = [1, 2]; // Reference
+        const ref = arr;
+        ref.push(3);
+        console.log(arr); // [1, 2, 3]
+
+DOM and Selecting Elements
+    getElementById: Select by ID.
+    getElementsByClassName: Select by class.
+    getElementsByTagName: Select by tag.
+    Example:
+        document.getElementById('title').textContent = 'New Title'; // ID
+        document.getElementsByClassName('item')[0].style.color = 'red'; // Class
+        document.getElementsByTagName('p')[0].textContent = 'Paragraph updated'; // Tag
+
+Change HTML and Append Elements
+    Change HTML: Modify the inner content.
+    Append: Add new content.
+    Example:
+    document.getElementById('content').innerHTML = '<p>New Paragraph</p>';
+    const newElement = document.createElement('span');
+    newElement.textContent = 'Appended text';
+    document.body.appendChild(newElement);
+
+Change and Create Attributes
+    Change Attribute: Use setAttribute or property.
+    Create Attribute: Use setAttribute.
+    Example:
+    const img = document.getElementById('image');
+    img.setAttribute('src', 'newImage.png'); // Change or create
+
+Change Style and Add/Remove Classes
+    Change Style: Modify CSS properties directly.
+    Add/Remove Class: Use classList.
+    Example:
+    const element = document.getElementById('box');
+    element.style.backgroundColor = 'blue'; // Change style
+    element.classList.add('highlight'); // Add class
+    element.classList.remove('highlight'); // Remove class
+    element.classList.toggle('hidden'); // Toggle class
+
+
+
+
+
+
+
+
+
+
+
+
+
+

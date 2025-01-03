@@ -1,0 +1,638 @@
+Start Date: 09/12/2024
+Part: 1
+
+HTML: Hypertext Markup Language
+    We use HTML to structure the content on a webpage.
+    The file extension is .html.
+
+CSS: Cascading Style Sheets
+    We use CSS to style our website for better visibility.
+    The file extension is .css.
+
+    Note: index.html [Default homepage file name]
+    When we navigate to a website, for example, xyz.com, the browser looks in the root directory for an index.html file. If it exists, the browser serves it.
+
+Quirks Mode: 
+A browser behaves in a way that's compatible with older, non-standard HTML (from the early web days).
+Quirks mode can cause:
+   Inconsistent layouts.
+   Incorrect rendering of CSS styles.
+   Problems with JavaScript behavior.
+
+Standards Mode (with <!DOCTYPE>)
+   The browser follows the latest web standards.
+   Your page behaves consistently across modern browsers.
+
+Note: When we use CSS for layouts, quirks mode can mess up how our elements are displayed. Including <!DOCTYPE html> ensures your designs look consistent and correct across all browsers.
+
+HTML Tags:
+    1. DOCTYPE
+        This defines the document as an HTML5 document and tells the browser to render it correctly.
+        Syntax: <!DOCTYPE html>
+        This is the only tag that starts with an exclamation mark (< : angle bracket).
+
+    2. html tag
+        Syntax: <html>...........</html>
+        This is the root tag for an HTML document.
+
+    3. head tag
+        Syntax: <head>...........</head>
+        It contains additional information about the website, like metadata or a title that appears at the top of the browser.
+        Note: It doesn't render anything in the browser.
+
+    4. body tag
+        Syntax: <body>...........</body>
+        It renders the content in the browser.
+
+Running HTML Code:
+1. File Protocol
+    This opens the file and contains the full path of the file in the URL.
+
+2. Local Development Server
+    It helps to view the website using the HTTP protocol.
+
+3. HTTP Protocol:
+    HTTP is the protocol used to communicate with servers to view websites.
+
+    The main advantage of using a Local Development Server is that we don't need to reload the page each time, which saves time.
+    For example, 127.0.0.1 is the local host.
+
+4. Inspect
+    Inspect helps preview the HTML file in a browser.
+    It is also called the Google Chrome Developer Tools panel.
+
+Basic HTML structure
+<!-- Basic HTML Structure -->
+
+<!-- <!DOCTYPE html> 
+<html>
+  <head>
+    <title>HTML-CSS Learnings</title>
+  </head>
+  <body>
+    <p>THis is a sample text</p>
+  </body>
+</html> -->
+
+
+Part: 2
+
+Basic Elements in HTML (with content)
+
+1. Paragraph tag (<p>):
+   Used to add a paragraph of text.
+
+2. Strong tag (<strong>):
+   Makes text important or bold.
+
+3. Em tag (<em>):
+   Used to emphasize text.
+
+4. Small tag (<small>):
+   Makes the text smaller.
+
+5. Heading tags (<h1>, <h2>, <h3>, <h4>, <h5>, <h6>):
+   The larger the number, the less important the heading.
+   - <h1> is the most important heading tag.
+   - <h6> is the least important heading tag.
+
+6. Unordered list (<ul>):
+   Contains list items (<li>) as nested tags.
+   Used for a bulleted list.
+
+7. Ordered list (<ol>):
+   Contains list items (<li>) as nested tags.
+   Used for a numbered list.
+
+8. Division tag (<div>):
+   Used to group together HTML elements into a single container.
+
+9. Span tag (<span>):
+   The <span> tag is an inline container used to group a small portion of text or elements.
+   It is often used to apply styles or functionality to a specific part of the content.
+
+
+Hook: A "hook" is a target in HTML where we can attach CSS styles or JavaScript functionality.
+Example: <span class="highlight">
+
+
+Some Elements with Only One Tag (No Content)
+
+1. Line Break (<br>):
+   Adds a line break.
+
+2. Horizontal Rule (<hr>):
+   Creates a horizontal line.
+
+3. Image tag (<img>):
+   Used to display an image.
+
+Attributes: Attributes provide additional information about an element.
+Example: <img src=".....path.....">
+- Absolute Path: When the file is not placed in the root folder, we use an absolute path.
+  Example: image/file1.jpg
+
+  Note: If using a local server, add a forward slash (/) to represent the root of the project.
+  Example: /image/file1.jpg
+
+- Relative Path: Specifies the file location relative to the current folder.
+- Alt Attribute: Provides a text description of the image (for accessibility or when the image fails to load).
+
+Anchor tag (<a>)
+The anchor tag is used to create links or navigate to other pages within a website.
+- The href attribute is used to specify the URL or target page.
+  Example: <a href="about.html">This is the About page</a>
+
+Blockquote tag (<blockquote>)
+
+The <blockquote> tag is used to define a block of text that is a quotation from another source.
+- The cite attribute is used to reference the source of the quotation.
+  Example:
+  <blockquote cite="https://www.example.com">
+    This contains a link to the external page.
+  </blockquote>
+
+Style Attribute: The style attribute is used to apply CSS styles directly to HTML elements.
+Example: <p style="color: red;">Style me :)</p>
+
+Comments: HTML comments are used to make the code more readable and to add notes for developers.
+Example: <!-- This is a comment -->
+
+
+Part: 3
+
+HTML Forms
+
+The <form> element is used to collect information from the user via form fields.
+
+<form action=""> </form>
+
+- action attribute: Tells the browser what to do when the user submits the form. The value of the action attribute specifies the URL where the form data will be sent for processing.
+- Forms are used to collect user input, and the form fields inside can contain different types of inputs.
+
+Input Fields
+
+<input type="text" id="username">
+
+- type attribute: Defines the type of the input field (e.g., text, email, password).
+- id attribute: Serves as a unique identifier for the input field.
+  Note: The id attribute should be unique within the HTML document.
+
+You can also use hooks to target specific elements for styling (CSS) or functionality (JavaScript).
+
+<label for=""></label>
+
+- label tag: Used to specify the label for a particular input field.
+
+Example:
+
+<form>
+  <label for="username">Enter username:</label>
+  <input type="text" name="username" id="username">
+</form>
+
+Different Input Types
+
+- type="email": Used for email input fields.
+- type="password": Used for password input fields (the text is hidden).
+- type="radio": Used for radio buttons, which allow the user to select one option from a group.
+
+Name Attribute
+
+The name attribute is similar to the id attribute but is used to identify form fields in server-side processing (e.g., PHP). The name attribute is important for grouping different parts of the form together.
+
+Example: Radio Button
+
+<form>
+  <input type="radio" name="gender" value="male"> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other<br>
+</form>
+
+Select (Dropdown)
+
+- The <select> tag is used to create a dropdown list.
+
+Example:
+
+<label for="questions">Security questions:</label>
+<select name="questions" id="questions">
+  <option value="q1">What is your favorite number?</option>
+  <option value="q2">What is your favorite color?</option>
+  <option value="q3">What is your favorite place?</option>
+  <option value="q4">What is your favorite food?</option>
+</select>
+
+Textarea
+
+- The <textarea> tag provides a multi-line text field for users to enter longer text.
+
+Placeholder Attribute
+
+- The placeholder attribute can be used to display a hint inside an input field before the user types.
+
+Example:
+
+<input type="text" placeholder="Enter your name">
+
+Required Attribute
+
+- The required attribute is used to make a form field mandatory to fill out before submitting the form.
+
+Submit Button
+
+- The submit button is used to submit the form.
+
+Example:
+
+<input type="submit" value="Submit the form">
+
+Part: 4
+
+CSS - Cascading Style Sheets
+
+Stylesheet: A list of CSS rules and rule sets is called a stylesheet.
+
+Example:
+div {  
+    color: red;  
+    margin: 20px;  
+}  
+
+li {  
+    color: blue;  
+}  
+Selectors: div and li
+           Selectors target the elements we want to style.
+
+Declarations: color: red; and margin: 20px;
+
+   Property Name: color
+   Value: red
+   Style Tag Usage:
+   Used under the <head> section:
+      Internal CSS
+      External CSS
+      Inline CSS
+
+External CSS Example:
+
+   <link rel="stylesheet" href="path-to-css-file">
+   Internal CSS Example:
+   <style>
+      h1 {  
+         color: orange;  
+         font-size: 20px;  
+      }  
+   </style>
+
+   Inline CSS Example:
+   <h1 style="color: orange;">Hello</h1>
+
+   External CSS Full Example:
+   h1 {  
+      color: orange;  
+      background-color: slategray;  
+      font-size: 20px;  
+      text-decoration: line-through;  
+      font-family: Arial;  
+      text-align: center;  
+      line-height: 30px;  
+      letter-spacing: 3px;  
+      column-count: 3;  
+      column-gap: 60px;  
+   }  
+
+   ul {  
+      border-width: 4px;  
+      border-style: solid;  
+      border-color: crimson;  
+   }  
+
+   li {  
+      list-style-type: disc;  
+      text-shadow: 2px 2px lightgray;  
+   }
+
+   Shorthand Properties:
+   border: 4px solid crimson;
+   Combines width, style, and color.
+
+   Hex Codes:
+
+   Start with #
+   Numbers: 0-9
+   Letters: A-F
+   Examples:
+
+   Darkest Shade: #000000 (Black)
+   Brightest Shade: #FFFFFF (White)
+
+   Elements:
+   Inline Elements: span, a, strong, img
+   Block-Level Elements: p, div
+
+   Margin: The space outside an element's border, creating distance between elements.
+   Padding: The space between an element's content and its border.
+   Inline Elements: Elements that do not start on a new line and only occupy as much width as necessary.
+   Block-Level Elements: Elements that start on a new line and take up the full width available.
+
+   Note: Block-Level Elements can have the margin all the way around the element.
+   But inline elements can only have the margin to the left and right of the elements.
+
+   user agent stylesheet: browser style sheets
+
+Part - 5
+
+CSS Classes & Selectorss
+Class Attribute: The class attribute in HTML provides a hook for CSS and is used as a selector to style multiple elements sharing the same class.
+
+Example:
+   HTML: <p class="success feedback"></p>
+   CSS:  .error {
+   color: red;
+   }
+   To style specific elements with the same class, use element.classname.
+
+Example:
+   CSS: p.error {
+   color: red;
+   }
+
+ID Attribute
+   The id attribute must be unique and can only be used once on a page. It is commonly used to style a single element.
+
+Example:
+   HTML: <div id="content"></div>
+   CSS: #content {
+   color: blue;
+   }
+
+Descendant Selector
+   This targets elements nested inside others.
+
+Example:
+   CSS: div p a {
+   color: red;
+   }
+   This CSS targets the <a> tag inside a <p> tag, which is inside a <div>.
+
+Descendant Selector
+   This targets elements nested inside others.
+
+Example:
+   CSS: div p a {
+   color: red;
+   }
+   This CSS targets the <a> tag inside a <p> tag, which is inside a <div>.
+
+Attribute Selector
+   Attribute selectors target elements based on their attributes.
+
+Example 1:
+   Select all anchor tags with the href attribute:
+   CSS: a[href] {
+   background-color: aqua;
+   }
+
+Example 2:
+   Select anchor tags with a specific href value:
+
+   a[href="https://www.google.com"] {
+   background-color: #3dd13d;
+   color: blueviolet;
+   text-decoration: none;
+   font-weight: bold;
+   text-transform: uppercase;
+   }
+
+Example 3:
+   Select anchor tags where href contains .com:
+   a[href*=".com"] {
+   background-color: #3dd13d;
+   }
+
+Example 4:
+   Select anchor tags where href ends with .com:
+
+   a[href$=".com"] {
+   color: navy;
+   }
+
+Inheritance
+   HTML elements inherit CSS properties applied to their parent elements.
+
+Example:
+   HTML: <div>
+   <p>Hello, Sachin</p>
+   </div>
+   CSS: div {
+   color: red;
+   }
+
+   In this example, the <p> tag inherits the color property from its parent <div>.
+
+Overriding Inheritance:
+   Specific CSS rules override inherited styles.
+
+Example:
+   HTML: <div id="content">
+      <p>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+      </div>
+   CSS: div {
+      color: blueviolet;
+      border: 2px solid chocolate;
+      font-weight: bold;
+      text-transform: uppercase;
+      }
+
+   p {
+      border: inherit;
+      margin: inherit;
+      }
+
+Specificity
+   CSS specificity determines which styles take precedence. Rules defined lower in the stylesheet or more specifically have higher priority.
+
+Example 1:
+   p {
+   color: rgb(121, 77, 163);
+   }
+
+   p {
+   color: tomato; /* Higher precedence */
+   }
+
+Example 2:
+   div p {
+   color: rgba(12, 14, 170, 0.274); /* More specific, higher precedence */
+   }
+
+   p {
+   color: rgb(121, 77, 163);
+   }
+
+   p {
+   color: tomato; /* Lower precedence than div p 
+   }
+
+Quick Note:
+   Use . for classes.
+   Use # for IDs.
+   Use the tag name for element selectors.
+
+   More about the cascade - https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade
+
+
+Part - 6
+
+Semantic tags: Semantic HTML tags are elements that clearly describe their meaning in a human- and machine-readable way. These tags help improve the structure and accessibility of a webpage by providing context about the content enclosed within them.
+
+Examples of Semantic Tags
+   <header>: Represents the introductory content or navigational links for a section.
+   <nav>: Used for navigation links.
+   <main>: Represents the main content of the document.
+   <article>: Represents a self-contained piece of content.
+   <section>: Defines a thematic grouping of content.
+   <footer>: Represents the footer for a document or section.
+
+Key Benefits of Semantic Tags
+   Improved Readability: They make the HTML structure more understandable for developers.
+   Better Accessibility: Assistive technologies can interpret semantic tags better for screen readers.
+   SEO Advantages: Search engines understand the content more effectively, leading to better indexing.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Semantic Tags Example</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Website</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>About Us</h2>
+        <p>This is a section that provides information about us.</p>
+      </section>
+      <article>
+        <h2>Latest News</h2>
+        <p>This article contains the latest news updates.</p>
+      </article>
+    </main>
+    <footer>
+      <p>&copy; 2024 My Website</p>
+    </footer>
+  </body>
+</html>
+
+
+Part - 7
+
+Chrome developer Tools
+Copy Selector:
+   Copy the CSS selector of an element for precise targeting.
+
+Edit as HTML:
+   Allows editing the HTML structure of an element directly in the browser.
+
+Scroll into View:
+   Brings the selected element into the viewport by scrolling the page.
+
+Hide Element:
+   Temporarily hides an element from the page.
+
+Delete Element:
+   Removes an element from the DOM temporarily.
+
+Edit Attribute:
+   Edit attributes like id, class, or src of an element.
+
+Add Attribute:
+   Add new attributes to an element.
+
+Applying Styles
+Crossed out:
+   When a CSS rule is overridden, the previous rule appears crossed out.
+
+Source Tab
+   It gives the tree of different files and folders of our project.
+   To save the edits, we need to use the filesystem options in tools.
+
+Console
+   Used for JavaScript.
+
+Device Preview
+   For different layouts.
+
+Part - 8
+
+Mario Demo project
+
+Part - 9
+
+Pseudo Classes & Elements
+
+Pseudo-classes define the special state of an element and are prefixed with a colon (:).
+
+   nav li a:hover {
+   text-decoration: underline;
+   }
+
+   .images li:hover {
+   top: -4px;
+   }
+
+
+Pseudo-elements style specific parts of an element and are prefixed with a double colon (::).
+
+Example:
+   section.join p::selection {
+   background: #f63232;
+   color: white;
+   }
+
+   p::after {
+   content: "...";
+   }
+
+Part - 10: 
+
+Responsive Design
+ Responsive design ensures that a website’s layout adapts to different screen sizes and devices.
+
+Viewport: To make a web page responsive, include the following meta tag in the <head> section:
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Media Queries: Media queries allow styling of elements based on specific viewport dimensions.
+Example: @media (max-width: 768px) {
+   body {
+      font-size: 14px;
+   }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+   body {
+      font-size: 16px;
+   }
+}
+
+Mobile-First Approach:
+	Design for smaller screens first and scale up for larger devices.
+	Start with base styles for mobile devices and use media queries to add styles for larger screens.
+
+
+
+
+
+
