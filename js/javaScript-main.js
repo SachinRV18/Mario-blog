@@ -614,3 +614,85 @@ function goHome() {
 
 // event listener to the close button with ID
 document.getElementById("close-btn").addEventListener("click", goHome);
+
+// Function to display the fetched data
+const displayData = (data) => {
+  const output = document.getElementById("output");
+  output.textContent = JSON.stringify(data, null, 2); // Display data as formatted JSON
+};
+
+// XMLHttpRequest with Callback
+document.getElementById("loadDataWithXHR").addEventListener("click", () => {
+  let request = new XMLHttpRequest();
+
+  // Callback function implementation
+  const getFunc = (callback) => {
+    request.addEventListener("readystatechange", () => {
+      if (request.readyState === 4 && request.status === 200) {
+        const data = JSON.parse(request.responseText); // using JSON.parse to convert string to JS Object
+        callback(undefined, data);
+      } else if (request.readyState === 4) {
+        callback("Error fetching data", undefined);
+      }
+    });
+  };
+
+  request.open("GET", "/json/employee.json");
+  request.send();
+
+  getFunc((err, data) => {
+    if (err) {
+      displayData({ error: err });
+    } else {
+      displayData(data);
+    }
+  });
+});
+
+// Promises with XMLHttpRequest
+document.getElementById("loadDataWithPromise").addEventListener("click", () => {
+  const getFunc = (url) => {
+    return new Promise((resolve, reject) => {
+      const request = new XMLHttpRequest();
+      request.addEventListener("readystatechange", () => {
+        if (request.readyState === 4 && request.status === 200) {
+          const data = JSON.parse(request.responseText);
+          resolve(data);
+        } else if (request.readyState === 4) {
+          reject("Error fetching data");
+        }
+      });
+      request.open("GET", url);
+      request.send();
+    });
+  };
+
+  getFunc("/json/student.json")
+    .then((data) => {
+      displayData(data);
+    })
+    .catch((err) => {
+      displayData({ error: err });
+    });
+});
+
+// Async/Await with Fetch
+document
+  .getElementById("loadDataWithAsyncAwait")
+  .addEventListener("click", async () => {
+    const getFunc = async (url) => {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      const data = await response.json();
+      return data;
+    };
+
+    try {
+      const data = await getFunc("/json/sample.json");
+      displayData(data);
+    } catch (error) {
+      displayData({ error: error.message });
+    }
+  });
