@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Mario",
+    "email": "Mario@gmail.com",
+    "age": 25,
+    "place": "Shivamogga"
+  },
+  {
+    "name": "Keto",
+    "email": "Keto@gmail.com",
+    "age": 28,
+    "place": "Bengaluru"
+  }
+]

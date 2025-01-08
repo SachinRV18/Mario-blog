@@ -614,3 +614,462 @@ function goHome() {
 
 // event listener to the close button with ID
 document.getElementById("close-btn").addEventListener("click", goHome);
+
+// Function to display the fetched data
+const displayData = (data) => {
+  const output = document.getElementById("output");
+  output.textContent = JSON.stringify(data, null, 2); // Display data as formatted JSON
+};
+
+// XMLHttpRequest with Callback
+document.getElementById("loadDataWithXHR").addEventListener("click", () => {
+  let request = new XMLHttpRequest();
+
+  // Callback function implementation
+  const getFunc = (callback) => {
+    request.addEventListener("readystatechange", () => {
+      if (request.readyState === 4 && request.status === 200) {
+        const data = JSON.parse(request.responseText); // using JSON.parse to convert string to JS Object
+        callback(undefined, data);
+      } else if (request.readyState === 4) {
+        callback("Error fetching data", undefined);
+      }
+    });
+  };
+
+  request.open("GET", "/json/employee.json");
+  request.send();
+
+  getFunc((err, data) => {
+    if (err) {
+      displayData({ error: err });
+    } else {
+      displayData(data);
+    }
+  });
+});
+
+// Promises with XMLHttpRequest
+document.getElementById("loadDataWithPromise").addEventListener("click", () => {
+  const getFunc = (url) => {
+    return new Promise((resolve, reject) => {
+      const request = new XMLHttpRequest();
+      request.addEventListener("readystatechange", () => {
+        if (request.readyState === 4 && request.status === 200) {
+          const data = JSON.parse(request.responseText);
+          resolve(data);
+        } else if (request.readyState === 4) {
+          reject("Error fetching data");
+        }
+      });
+      request.open("GET", url);
+      request.send();
+    });
+  };
+
+  getFunc("/json/student.json")
+    .then((data) => {
+      displayData(data);
+    })
+    .catch((err) => {
+      displayData({ error: err });
+    });
+});
+
+// Async/Await with Fetch
+document
+  .getElementById("loadDataWithAsyncAwait")
+  .addEventListener("click", async () => {
+    const getFunc = async (url) => {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      const data = await response.json();
+      return data;
+    };
+
+    try {
+      const data = await getFunc("/json/sample.json");
+      displayData(data);
+    } catch (error) {
+      displayData({ error: error.message });
+    }
+  });
+
+// HTTP Request
+
+// // using old HTTP- XML Request
+// let request = new XMLHttpRequest();
+
+// request.addEventListener("readystatechange", () => {
+//   // console.log(request, request.readyState);
+
+//   if (request.readyState === 4 && request.status === 200) {
+//     console.log(request);
+//     console.log(request.responseText);
+//   } else if (request.readyState === 4) {
+//     console.log("could not fetch the data!!");
+//   }
+// });
+
+// request.open("GET", "https://jsonplaceholder.typicode.com/todos/");
+// request.send();
+
+// // CallBack Function implementation using HTTP Request
+// let request = new XMLHttpRequest();
+
+// const getFunc = (callback) => {
+//   request.addEventListener("readystatechange", () => {
+//     // console.log(request, request.readyState);
+//     if (request.readyState === 4 && request.status === 200) {
+//       // console.log(request.responseText);
+//       callback(undefined, request.responseText);
+//     } else if (request.readyState === 4) {
+//       // console.log("could not fetch the data!!");
+//       callback("data fetch failed!", undefined);
+//     }
+//   });
+// };
+
+// request.open("GET", "https://jsonplaceholder.typicode.com/todos/");
+// request.send();
+// getFunc((err, data) => {
+//   console.log("callback fired");
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//   }
+// });
+
+// using JSON
+// let request = new XMLHttpRequest();
+
+// const getFunc = (callback) => {
+//   request.addEventListener("readystatechange", () => {
+//     if (request.readyState === 4 && request.status === 200) {
+//       const data = JSON.parse(request.responseText); //using JSON.parse method to convert from JSON string to the JS Object.
+//       callback(undefined, data);
+//     } else if (request.readyState === 4) {
+//       callback("data fetch failed!", undefined);
+//     }
+//   });
+// };
+
+// request.open("GET", "https://jsonplaceholder.typicode.com/todos/");
+// request.send();
+// getFunc((err, data) => {
+//   console.log("callback fired");
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//     console.log(data[1]["id"]);
+//     console.log(data[1].id);
+
+//     // accessing the data from JSON
+//     console.log(data[1]["title"]);
+//     console.log(data[1].title);
+//   }
+// });
+
+//getting data from own JSON
+// let request = new XMLHttpRequest();
+
+// const getFunc = (callback) => {
+//   request.addEventListener("readystatechange", () => {
+//     if (request.readyState === 4 && request.status === 200) {
+//       const data = JSON.parse(request.responseText); //using JSON.parse method to convert from JSON string to the JS Object.
+//       callback(undefined, data);
+//     } else if (request.readyState === 4) {
+//       callback("data fetch failed!", undefined);
+//     }
+//   });
+// };
+
+// request.open("GET", "/json/sample.json");
+// request.send();
+
+// getFunc((err, data) => {
+//   console.log("callback fired");
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//   }
+// });
+
+// // Callback hell
+// // creating a nested call back functions to create doom like structure called as callback hell.
+
+// const getFunc = (resources, callback) => {
+//   const request = new XMLHttpRequest();
+//   request.addEventListener("readystatechange", () => {
+//     if (request.readyState === 4 && request.status === 200) {
+//       const data = JSON.parse(request.responseText); //using JSON.parse method to convert from JSON string to the JS Object.
+//       callback(undefined, data);
+//     } else if (request.readyState === 4) {
+//       callback("data fetch failed!", undefined);
+//     }
+//   });
+
+//   request.open("GET", resources);
+//   request.send();
+// };
+
+// getFunc("/json/student.json", (err, data) => {
+//   console.log(data);
+//   getFunc("/json/sample.json", (err, data) => {
+//     console.log(data);
+//     getFunc("/json/employee.json", (err, data) => {
+//       console.log(data);
+//     });
+//   });
+// });
+
+// Promises Example
+
+// const getFunc = (resources, callback) => {
+//   const request = new XMLHttpRequest();
+//   request.addEventListener("readystatechange", () => {
+//     if (request.readyState === 4 && request.status === 200) {
+//       const data = JSON.parse(request.responseText); //using JSON.parse method to convert from JS string to the JS Object.
+//       callback(undefined, data);
+//     } else if (request.readyState === 4) {
+//       callback("data fetch failed!", undefined);
+//     }
+//   });
+
+//   request.open("GET", resources);
+//   request.send();
+// };
+
+// const getPromises = () => {
+//   return new Promise((resolve, reject) => {
+//     console.log("Fetching data!!!");
+//     resolve("success!!!");
+//     // reject("Failure!!!");
+//   });
+// };
+// getPromises().then(
+//   (data) => {
+//     console.log(data);
+//   },
+//   (err) => {
+//     console.log(err);
+//   }
+// );
+
+// // the above promises we can also catch error like below
+
+// const getPromises = () => {
+//   return new Promise((resolve, reject) => {
+//     console.log("Fetching data!!!");
+//     // resolve("success!!!");
+//     reject("Failure!!!");
+//   });
+// };
+
+// getPromises()
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// returning a promise
+
+// const getFunc = (resources) => {
+//   return new Promise((resolve, reject) => {
+//     const request = new XMLHttpRequest();
+
+//     request.addEventListener("readystatechange", () => {
+//       if (request.readyState === 4 && request.status === 200) {
+//         const data = JSON.parse(request.responseText);
+//         resolve(data);
+//       } else if (request.readyState === 4) {
+//         reject("error getting data");
+//       }
+//     });
+
+//     request.open("GET", resources);
+//     request.send();
+//   });
+// };
+
+// getFunc("/json/students.json")
+//   .then((data) => {
+//     console.log("promise resolved:", data);
+//   })
+//   .catch((err) => {
+//     console.log("promise Rejected:", err);
+//   });
+
+// // returning a promise with promise chaining
+// const getFunc = (resources) => {
+//   return new Promise((resolve, reject) => {
+//     const request = new XMLHttpRequest();
+
+//     request.addEventListener("readystatechange", () => {
+//       if (request.readyState === 4 && request.status === 200) {
+//         const data = JSON.parse(request.responseText);
+//         resolve(data);
+//       } else if (request.readyState === 4) {
+//         reject("error getting data");
+//       }
+//     });
+
+//     request.open("GET", resources);
+//     request.send();
+//   });
+// };
+
+// getFunc("/json/student.json")
+//   .then((data) => {
+//     console.log("promise  1 resolved:", data);
+//     return getFunc("/json/employee.json");
+//   })
+//   .then((data) => {
+//     console.log("promise  2 resolved:", data);
+//     return getFunc("/json/sample.json");
+//   })
+//   .then((data) => {
+//     console.log("promise  3 resolved:", data);
+//   })
+//   .catch((err) => {
+//     console.log("promise Rejected:", err);
+//   });
+
+// // fetch api
+// fetch("/json/student.json")
+//   .then((response) => {
+//     console.log("resolved", response);
+//     return response.json(); // it always returns a promise
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log("error is ", error);
+//   });
+
+// ===================================
+// fetch("/json/studentt.json")
+//   .then((response) => {
+//     console.log("resolved", response);
+
+//     // The ok read-only property of the Response interface contains a Boolean stating whether the response was successful (status in the range 200-299) or not.
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! Status: ${response.status}`); // Manually throw an error for non-2xx status codes
+//     }
+
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log("error is ", error); // Catches any error in the chain, including the manual error
+//   });
+
+// async and await
+
+// const getData = async () => {
+//   const response = await fetch("/json/student.json");
+//   const data = await response.json();
+//   return data;
+// };
+
+// getData().then((data) => {
+//   console.log(data);
+// });
+
+//Multiple call
+// const getData = async () => {
+//   const response = await fetch("/json/student.json");
+//   const data = await response.json();
+//   return data;
+// };
+
+// getData()
+//   .then((data) => {
+//     console.log("First data:", data);
+//     return fetch("/json/employee.json");
+//   })
+//   .then((response2) => response2.json())
+//   .then((data2) => {
+//     console.log("Second data:", data2);
+//   })
+//   .catch((error) => {
+//     console.log("Error:", error);
+//   });
+
+// throw an custom error
+
+// const asyncFun = async () => {
+//   const res = await fetch("/json/studentt.json"); // if the URL is incorrect it give a wrong error so we need to handle it by creating a custom error
+//   if (res.status != 200) {
+//     throw new Error("error found!"); // it will throw an error
+//   }
+//   const data = await res.json();
+//   return data;
+// };
+
+// asyncFun()
+//   .then((data) => {
+//     console.log("Data is: ", data);
+//   })
+//   .catch((err) => {
+//     console.log("Error is", err.message); // catch the thrown error and display it for async function
+//   });
+
+// 3. The Difference: this Binding
+// The main difference between regular functions and arrow functions is how they handle this.
+
+// Regular Function Example:
+// In a regular function, this is determined by how the function is called. If we call the function using an object,
+// this will refer to that object. But if we call it alone, this will refer to something else (like the global object).
+
+// const person = {
+//   name: "Alice",
+//   greet: function () {
+//     console.log(this.name); // `this` refers to the person object
+//   },
+//   delayedGreet: function () {
+//     // Using a normal function inside setTimeout
+//     setTimeout(function () {
+//       console.log(this.name); // `this` here refers to the global object (or undefined in strict mode)
+//     }, 1000);
+//   },
+// };
+
+// person.delayedGreet(); // Output: undefined (or error in strict mode)
+
+// In an arrow function, this is always the same as it was in the place where the arrow function was created. It doesn’t change based on how it is called.
+// const person = {
+//   name: "Alice",
+//   greet: function () {
+//     console.log(this.name); // `this` refers to the person object
+//   },
+//   delayedGreet: function () {
+//     // Using an arrow function inside setTimeout
+//     setTimeout(() => {
+//       console.log(this.name); // `this` here refers to the person object because of lexical binding
+//     }, 1000);
+//   },
+// };
+
+// person.delayedGreet(); // Output: Alice
+
+// Note:
+// Normal Function: this depends on how the function is called.Inside setTimeout, it refers to the global object(or undefined in strict mode).
+// Arrow Function: this is lexically bound, meaning it refers to the this of the surrounding context (in this case, the person object).
+
+// strict mode example
+// function myFunction() {
+//   "use strict"; // Strict mode applies only within this function
+//   x = 10; // Error: x is not defined
+// }
+// myFunction();

@@ -1,0 +1,16 @@
+[
+  {
+    "Emp_name": "Gene",
+    "Emp_email": "Gene@gmail.com",
+    "Emp_age": 25,
+    "Emp_place": "Mysore",
+    "Emp_exp": "1yr"
+  },
+  {
+    "Emp_name": "Pluto",
+    "Emp_email": "Pluto@gmail.com",
+    "Emp_age": 27,
+    "Emp_place": "Bengaluru",
+    "Emp_exp": "3yr"
+  }
+]
